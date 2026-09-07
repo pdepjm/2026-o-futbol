@@ -1,0 +1,26 @@
+import futbol.*
+
+object equipoDePrueba{
+  method goles(rival) = 10
+  method dinero() = 400
+}
+
+describe "referi" {
+
+  test "el equipo ganador es aquel que mete mas goles" {
+    assert.equals(barracas, referi.quienGanaEntre(barracas, river))
+  }
+
+  test "si hay empate, se define al azar"{
+    const ganadorAleatorio = referi.quienGanaEntre(river, equipoDePrueba)
+    assert.that([river, equipoDePrueba].contains(ganadorAleatorio))
+  }
+
+}
+
+describe "barracas"{
+  test "siempre mete un gol mas que el rival"{
+    const golesQueLeMeten = equipoDePrueba.goles(barracas)
+    assert.equals(golesQueLeMeten + 1, barracas.goles(equipoDePrueba))
+  }
+}
