@@ -1,4 +1,5 @@
 import futbol.*
+import jugadores.*
 
 object equipoDePrueba{
   method goles(rival) = 10
@@ -22,5 +23,16 @@ describe "barracas"{
   test "siempre mete un gol mas que el rival"{
     const golesQueLeMeten = equipoDePrueba.goles(barracas)
     assert.equals(golesQueLeMeten + 1, barracas.goles(equipoDePrueba))
+  }
+}
+
+describe "boca" {
+  test "No puede vender un jugador que no tiene" {
+    const dineroInicial = boca.dinero()
+
+    boca.venderJugador(elPerroGutierrez)
+
+    assert.equals(dineroInicial, boca.dinero())
+    
   }
 }
